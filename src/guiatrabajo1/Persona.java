@@ -52,7 +52,7 @@ public class Persona implements Comparable {
 
     
     
-    // hay un error  cuando invoco el compareTo
+    
     public int compareTo (Object obj){
        Persona p = (Persona )obj;
        
