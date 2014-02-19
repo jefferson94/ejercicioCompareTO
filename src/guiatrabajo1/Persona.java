@@ -13,22 +13,19 @@ public class Persona implements Comparable {
 
     private char nombre[];
     private char codigo[];
-    private char mcarrera[];
+    private Carrera mcarrera ;
 
     public Persona() {
     }
 
-    public Persona(char[] nombre, char[] codigo, char carrera[]) {
-        this.nombre = nombre;
-        this.codigo = codigo;
-        this.mcarrera = carrera;
-    }
+   
+    //nuevooooooooooooooooooooooooooooo
 
     public boolean equals(Object obj) {
 
         Persona p = (Persona) obj;
 
-        if (this.mcarrera.equals(p.getMcarrera())) {
+        if (this.mcarrera.equals(p.mcarrera)) {
 
             if (this.getNombre().length != p.getNombre().length) {
 
@@ -59,9 +56,11 @@ public class Persona implements Comparable {
     public int compareTo (Object obj){
        Persona p = (Persona )obj;
        
+     
       
-       //int c = (this.getCodigo().compareTo(p.getCodigo()));
+       int c = (this.mcarrera.compareTo(p.mcarrera));
         
+       
         if ( c==0){
         
          for (int i = 0; i < this.getNombre().length; i++) {
@@ -74,18 +73,15 @@ public class Persona implements Comparable {
                 }
 
             }
-        
-        
+       
         
         }
-        
-        return 1;
-    
-    
-    
-    
-    
+        return c;
     }
+        
+        
+        
+
     public char[] getNombre() {
         return nombre;
     }
@@ -94,9 +90,7 @@ public class Persona implements Comparable {
         return codigo;
     }
 
-    public char[] getMcarrera() {
-        return mcarrera;
-    }
+   
 
     @Override
     public int compareTo() {
